@@ -44,9 +44,6 @@ bot.on('message', msg => {
   }
 
   if(msg.content === 'test_map') {
-    const attachment = new Discord.MessageAttachment('https://i.imgur.com/w3duR07.png');
-
-    msg.channel.send(attachment);
   }
 
   if(msg.content.startsWith('vatan ')) {
