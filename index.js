@@ -43,6 +43,12 @@ bot.on('message', msg => {
 
   }
 
+  if(msg.content === 'test_map') {
+    const attachment = new Discord.MessageAttachment('https://i.imgur.com/w3duR07.png');
+
+    msg.channel.send(attachment);
+  }
+
   if(msg.content.startsWith('vatan ')) {
       console.log('received command: ' + msg.content);
       const msgContent = msg.content.split(' ');
@@ -50,7 +56,7 @@ bot.on('message', msg => {
 
       const command = msgContent[1];
       if(command in endpoints) {
-          endpoints[command](msg, deltaContent);
+          endpoints[command](Discord, msg, deltaContent);
       }
   }
   
